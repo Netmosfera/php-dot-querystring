@@ -9,7 +9,7 @@ That's a regular php multidimensional querystring; looks pretty fine until you r
 - readability and chances the user can edit them manually are nil
 - that's a waste of bytes: 6 bytes each key, querystring length is usually limited by web servers
 
-So I wrote this simple function that cames as a replacement for php's `parse_str`
+So I wrote this simple function that comes as a replacement for php's `parse_str`
 
     hello.aaa.bbb=10&hello.aaa.ccc=10
 
@@ -34,6 +34,10 @@ So if you have...
 ... you just have to write ...
 
     <input type="text" name="users..">
+
+And for getting the data from PHP...
+
+    $_GET = parse_dot_str($_SERVER['QUERY_STRING']);
 
 =======
 
