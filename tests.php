@@ -5,24 +5,24 @@ function parse_dot_str($str){
 	return $result;
 }
 
-$php_string[] = "a=20&b=21&c=22";							$dot_string[] = "a=20&b=21&c=22";
-$php_string[] = "a=20&a=21&a=22";							$dot_string[] = "a=20&a=21&a=22";
+$php_string[] = "a=20&b=21&c=22";				$dot_string[] = "a=20&b=21&c=22";
+$php_string[] = "a=20&a=21&a=22";				$dot_string[] = "a=20&a=21&a=22";
 
-$php_string[] = "a[a]=20&a[]=21";							$dot_string[] = "a.a=20&a.=21";
-$php_string[] = "a[77]=20&a[]=21";							$dot_string[] = "a.77=20&a.=21";
-$php_string[] = "a[]=19&a[77]=20&a[]=21";					$dot_string[] = "a.=19&a.77=20&a.=21";
+$php_string[] = "a[a]=20&a[]=21";				$dot_string[] = "a.a=20&a.=21";
+$php_string[] = "a[77]=20&a[]=21";				$dot_string[] = "a.77=20&a.=21";
+$php_string[] = "a[]=19&a[77]=20&a[]=21";			$dot_string[] = "a.=19&a.77=20&a.=21";
 
 $php_string[] = "a[b][]=1&a[b][]=2&a[b]=3&a[b][]=4";		$dot_string[] = "a.b.=1&a.b.=2&a.b=3&a.b.=4";
 
-$php_string[] = "a[][]=20&a[][]=21";						$dot_string[] = "a..=20&a..=21";
-$php_string[] = "a[]=10&a[][]=20&a[][]=21";					$dot_string[] = "a.=10&a..=20&a..=21";
+$php_string[] = "a[][]=20&a[][]=21";				$dot_string[] = "a..=20&a..=21";
+$php_string[] = "a[]=10&a[][]=20&a[][]=21";			$dot_string[] = "a.=10&a..=20&a..=21";
 
-$php_string[] = "[a]=20";									$dot_string[] = ".a=20";
-$php_string[] = "[a][b]=20";								$dot_string[] = ".a.b=20";
-$php_string[] = "[a][]=20";									$dot_string[] = ".a.=20";
-$php_string[] = "[][]=20";									$dot_string[] = "..=20";
-$php_string[] = "[][]=20&a=10";								$dot_string[] = "..=20&a=10";
-$php_string[] = "b=20&[][]=20&a=10";						$dot_string[] = "b=20&..=20&a=10";
+$php_string[] = "[a]=20";					$dot_string[] = ".a=20";
+$php_string[] = "[a][b]=20";					$dot_string[] = ".a.b=20";
+$php_string[] = "[a][]=20";					$dot_string[] = ".a.=20";
+$php_string[] = "[][]=20";					$dot_string[] = "..=20";
+$php_string[] = "[][]=20&a=10";					$dot_string[] = "..=20&a=10";
+$php_string[] = "b=20&[][]=20&a=10";				$dot_string[] = "b=20&..=20&a=10";
 
 foreach($dot_string as $i => $s){
 
