@@ -12,7 +12,7 @@ It looks fine until you realize that:
 - Readability and the chances that the user can edit it manually are nil
 - It's a waste of bytes. There are 6bytes/key, the query string length is usually limited by web servers
 
-The simple function `parse_dot_str()` comes as a replacement for PHP's `parse_str()` to allow the following equivalent:
+The simple function `DotQueryString::decode()` comes as a replacement for PHP's `parse_str()` to allow the following equivalent:
 
     hello.aaa.bbb=10&hello.aaa.ccc=10
 
@@ -23,7 +23,7 @@ I believe this is perfect for PHP, since you aren't allowed to use `.` in URL ke
 - Readability and editability are improved 
 - Instead of 6bytes/each key, you will use just one single byte
 
-| Current Method | `parse_dot_str()` Method |
+| Current Method | `DotQueryString::decode()` Method |
 | :---: | :---: |
 | `<input type="text" name="users[10][name]">` | ` <input type="text" name="users.10.name">` |
 | `<input type="text" name="users[][]">` | `<input type="text" name="users..">` |
@@ -32,14 +32,8 @@ I believe this is perfect for PHP, since you aren't allowed to use `.` in URL ke
 For getting the data from PHP:
 
 ```php
-$_GET = parse_dot_str($_SERVER['QUERY_STRING']);
+$_GET = DotQueryString::decode($_SERVER['QUERY_STRING']);
 ```
-
-=======
-
-**Implementation is a bit of a disaster at the moment, but I believe it is _good enough_. Feel free to suggest improvements!**
-
-**TODO:** a `http_build_query()` equivalent for this syntax
 
 =======
 
