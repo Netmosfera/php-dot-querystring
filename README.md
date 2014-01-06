@@ -1,5 +1,6 @@
-parse_dot_str
+DotQueryString
 =============
+###Houston we have a problem: lengthy and ugly querystrings!
 
 This a typical PHP multi-dimensional query string:
 
@@ -27,6 +28,7 @@ I believe this is perfect for PHP, since you aren't allowed to use `.` in URL ke
 | :---: | :---: |
 | `<input type="text" name="users[10][name]">` | ` <input type="text" name="users.10.name">` |
 | `<input type="text" name="users[][]">` | `<input type="text" name="users..">` |
+| `<input type="text" name="foo[][test][]">` | `<input type="text" name="foo..test.">` |
 
 
 For getting the data from PHP:
