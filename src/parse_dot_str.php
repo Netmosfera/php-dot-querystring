@@ -8,7 +8,7 @@ namespace WesNetmo\ParseDotStr {
      */
     function parse_dot_str($dotSyntax)
     {
-        $bracketSyntax = preg_replace('/[.]([^.]*?)(?=[=.&]|$)/', '[\1]', $dotSyntax);
+        $bracketSyntax = preg_replace('/[.]([^.]*?)(?=[=.&]|$)$/', '[\1]', $dotSyntax);
         parse_str($bracketSyntax, $array);
         return $array;
     }
