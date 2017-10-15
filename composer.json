@@ -1,0 +1,36 @@
+{
+    "name": "php-tool-bucket/dot-query-string",
+    "description": "",
+    "keywords": [],
+    "homepage": "https://github.com/PHPToolBucket/QueryDotString",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wes",
+            "homepage": "https://github.com/Netmosfera",
+            "role": "Had the idea"
+        },
+        {
+            "name": "Kyra ツ",
+            "homepage": "https://github.com/KyraD",
+            "role": "Implemented the idea"
+        }
+    ],
+    "require": {
+        "php": ">=7.1 <8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=6 <7"
+    },
+    "autoload": {
+        "files": [
+            "src/decodeDotQueryString.inc.php",
+            "src/encodeDotQueryString.inc.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PHPToolBucket\\DotQueryStringTests\\": "tests/"
+        }
+    }
+}
