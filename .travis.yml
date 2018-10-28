@@ -3,9 +3,9 @@ language: php
 php:
 - "7.2"
 
-before_script:
+install:
   - composer self-update
   - composer install
 
 script:
-  - phpunit --configuration phpunit.xml --coverage-text --coverage-clover=coverage.clover
+  - phpunit --coverage-text
